@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        table{
+            border: 2px black solid;
+            height:auto;
+            width: auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        tr>th{
+            border: 2px black solid;
+            height: 20px;
+            width: 150px;
+            margin: 10px;
+            
+        }
+        tr>td{
+            border: 2px black solid;
+            height: 20px;
+            width: 150px;
+            margin: 30px;
+            text-align: center;
+        }
+        form{
+            margin: auto;
+        }
+        form>input{
+            text-align: center;
+            height: auto;
+            width: 150px;
+        }
+        #detials{
+            background-color: blue;
+            border: 2px black solid;
+            position: relative;
+            margin-left: 300px;
+            margin-top: 300px;
+            width: 670px;
+            border-radius: 25px;
+        }
+        #detials>section{
+            font-size: 20px;
+            display: flex;
+            
+        }
+        #detials>section>article{
+            flex: 1;
+            max-width: 330px;
+        }
+        #detials>section>article>div{
+            display: block;
+            margin: 20px;
+            background-color: blue;
+            color: white;
+            
+            
+        }
+        #detials>section>article>div>input{
+            border-radius: 5px;
+            border: 2px black solid;
+        }
+        #detials>div{
+            position: relative;
+            left: 45%;  
+            padding: 10px 0px; 
+        }
+    </style>
+</head>
+<body>
+<table id="table">
+    <tr>
+        <th>SrNo.</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Start-Date</th>
+        <th>End-Date</th>
+        <th>Assigned By:</th>
+    </tr>
+        
+    
+</table>
+<form id="detials" name="form">
+    
+    <section>
+        <article>
+            <div>SrNo:-<input type="number" name="srNo" placeholder="SrNo"></div>
+            <div>Name:-<input type="text" name="name" placeholder="Name of Project"></div>
+            <div>About:-<input type="text" name="description" placeholder="Description"></div>
+        </article>
+        <article>
+            <div>Start-Date:-<input type="date" name="startDate" placeholder="StartDate"></div>
+            <div>End-Date:-<input type="date" name="endDate" placeholder="EndDate"></div>
+            <div>Assigned-By:-<input type="text" name="assignedBy" placeholder="Assigned-By"></div>
+            <div>Priority:-<select name="priorityKey">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+            </select></div>
+        </article>
+    </section><br>
+    
+        <div><input type="button" name="submit" value="Submit" onclick="addTask();"></div>
+    
+</form>
+
+<script>
+    var tasks =[
+        {
+            "Name":"kunal resume",
+            "Description":"project1",
+            "StartDate": "28/07/2024",
+            "EndDate":"29/07/2024",
+            "AssignedBy":"suhail sir",
+            "priority":1
+        },
+        {
+            "Name":"Project2",
+            "Description":"project",
+            "StartDate": "28/07/2024",
+            "EndDate":"29/07/2024",
+            "AssignedBy":"suhail sir",
+            "priority":2
+        },
+        {
+            
+            "Name":"Project3",
+            "Description":"project",
+            "StartDate": "28/07/2024",
+            "EndDate":"29/07/2024",
+            "AssignedBy":"suhail sir",
+            "priority":3
+        }
+        
+        
+    ];
+    var todo = document.getElementById("table");
+    for (let i = 0; i < tasks.length; i++) {
+        var tr = document.createElement("tr");
+        todo.append(tr);
+        var td = document.createElement("td");
+        tr.append(td);
+        td.innerText=i+1;
+        var td1 = document.createElement("td");
+        tr.append(td1);
+        td1.innerText=tasks[i].Name;
+        var td2 = document.createElement("td");
+        tr.append(td2);
+        td2.innerText=tasks[i].Description;
+        var td3 = document.createElement("td");
+        tr.append(td3);
+        td3.innerText=tasks[i].StartDate;
+        var td4 = document.createElement("td");
+        tr.append(td4);
+        td4.innerText=tasks[i].EndDate;
+        var td5 = document.createElement("td");
+        tr.append(td5);
+        td5.innerText=tasks[i].AssignedBy;
+        
+
+        if (tasks[i].priority==1) {
+            tr.style="background-color:red";
+        }else if (tasks[i].priority==2) {
+            tr.style="background-color:yellow";
+        }else{
+            tr.style="background-color:green";
+        }
+        }
+
+        function addTask(){
+            var srNo=document.form.srNo.value;
+            console.log(srNo);
+            var name=document.form.name.value;
+            console.log(name);
+            var description=document.form.description.value;
+            console.log(description);
+            var startDate=document.form.startDate.value;
+            console.log(startDate);
+            var endDate=document.form.endDate.value;
+            console.log(endDate);
+            var assignedBy=document.form.assignedBy.value;
+            console.log(assignedBy);
+
+            var todo = document.getElementById("table");
+
+            var tr = document.createElement("tr");
+            todo.append(tr);
+            var td = document.createElement("td");
+            tr.append(td);
+            td.innerHTML=srNo;
+            var td1 = document.createElement("td");
+            tr.append(td1);
+            td1.innerHTML=name;
+            var td2 = document.createElement("td");
+            tr.append(td2);
+            td2.innerHTML=description;
+            var td3 = document.createElement("td");
+            tr.append(td3);
+            td3.innerHTML=startDate;
+            var td4 = document.createElement("td");
+            tr.append(td4);
+            td4.innerHTML=endDate;
+            var td5 = document.createElement("td");
+            tr.append(td5);
+            td5.innerHTML=assignedBy;
+
+
+            var priorityKey = document.form.priorityKey.value;
+            tr.append(priorityKey);
+
+
+            if (priorityKey.value=="1") {
+                tr.style="background-color:red";
+            }else if (priorityKey.value=="2") {
+                tr.style="background-color:black";
+            }else{
+                tr.style="background-color:green";
+            }
+        }
+    
+</script>
+</body>
+</html>

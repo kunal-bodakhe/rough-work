@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript</title>
+    </head>
+    <body1>
+        <div id="container" style="display: flex;flex-direction: column;align-items: center; border: 2px black solid; padding: 30px;font-size: 40px;margin: 30px;">
+            <p id="lol">
+                Welcome to Javascript
+            </p>
+            
+            <div id="1" style=" background-color: black;height: 80px;width: 80px;"></div>
+        </div>
+        <div style="display: flex;flex-direction: row;align-items: center;border: 2px black solid; margin: 30px;padding: 30px;margin: 20px;">
+            <button onclick="change()" style="margin: 20px;background-color: aqua;">change text</button>
+            <button onclick="red()" style="margin: 20px;background-color: red;">RED</button>
+            <button onclick="yellow()" style="margin: 20px;background-color: yellow;">YELLOW</button>
+            <button onclick="green()" style="margin: 20px;background-color: green;">GREEN</button>
+            <button onclick="reverttext()" style="margin: 20px;">reverse text</button>
+        </div>
+        
+        <script>
+            var p=document.createElement("p");
+                p.innerText="hiiiiiiiiiii";
+                container.append(p);
+            alert("welcome to the website");
+            document.getElementById("lol").style="color:blue";
+            var neww= "BYE"
+            var old= document.getElementById("lol").innerText;
+            function change(){
+               
+                document.getElementById("lol").innerHTML=neww;
+            }
+            function red(){
+                document.getElementById("1").style=" background-color:red;height: 80px;width: 80px";
+            }
+            function yellow(){
+                document.getElementById("1").style=" background-color:yellow;height: 80px;width: 80px";
+            }
+            function green(){
+                document.getElementById("1").style=" background-color:green;height: 80px;width: 80px";
+            }
+            function reverttext(){
+
+            //    var reverse= text s;
+             document.getElementById("lol").innerHTML= old;
+                
+            
+            }
+        </script>
+    </body1>
+</html>

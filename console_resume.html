@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CONSOLE RESUME</title>
+    </head>
+    <body>
+        <script>
+            let personalInfo={
+    "one":"1.Personal Information",
+    "name":"NAME    : KUNAL BODAKHE",
+    "age":"Age     : 21",
+    "address":"Address : kurla(w),mumbai-70",
+    "summary":"Summary : I am and Engineering Student in G.V. Acharya institute of technology and i am in Third year in computer engineering course. I have knowledge about C++,python, Basic Javascript, & HTML."
+}
+let education=[
+    {
+        "three":"3.Education"
+    },
+    {
+        "school":"School name : karthika high",
+        "education":"Education   : 10th"
+    },
+    {
+        "college":"College     : s.h.s jhondale polytechnic",
+        "education":"Education   : diploma",
+        "degree":"Degree      : computer engineering"
+    }
+    
+]
+let internships=[
+    {
+        "two":"2.Work-Experience"
+    },
+    {
+        
+        "institution":"Institution 1   : ignitech",
+        "course":"Course          : python",
+        "duration":"Course Duration : 8 weeks"
+    },
+    {
+        "institution":"Institution 2   : techpathshala",
+        "course":"Course          : frontend",
+        "duration":"Course Duration : 6 months"
+    }
+]
+let resume={
+    "candidate": personalInfo,
+    "experience": internships,
+    "candidates_education": education
+    
+}
+console.log("RESUME")
+console.log("===================================================================================")
+console.log(resume.candidate.one)
+console.log("");
+console.log(resume.candidate.name)
+console.log(resume.candidate.age)
+console.log(resume.candidate.address)
+console.log(resume.candidate.summary)
+console.log("===================================================================================")
+console.log(resume.experience[0].two);
+console.log("");
+console.log(resume.experience[1].institution);
+console.log(resume.experience[1].course);
+console.log(resume.experience[1].duration);
+console.log("");
+console.log(resume.experience[2].institution);
+console.log(resume.experience[2].course);
+console.log(resume.experience[2].duration);
+console.log("===================================================================================")
+console.log(resume.candidates_education[0].three)
+console.log("");
+console.log(resume.candidates_education[1].school)
+console.log(resume.candidates_education[1].education)
+console.log("");
+console.log(resume.candidates_education[2].college)
+console.log(resume.candidates_education[2].education)
+console.log(resume.candidates_education[2].degree)
+        </script>
+    </body>
+</html>
